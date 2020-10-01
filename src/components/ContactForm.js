@@ -14,11 +14,11 @@ const ContactForm = () => {
     <div className="App">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label htmlFor="firstName">First Name*</label>
+          <label htmlFor="firstName" id= 'firstName'>First Name*</label>
           <input
             name="firstName"
             placeholder="Edd"
-            ref={register({ required: true, maxLength: 3 })}
+            ref={register({ required: true, maxLength: 10 })}
           />
           {errors.firstName && (
             <p>Looks like there was an error: {errors.firstName.type}</p>
@@ -26,7 +26,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="lastName">Last Name*</label>
+          <label htmlFor="lastName" id = 'lastName'>Last Name*</label>
           <input
             name="lastName"
             placeholder="Burke"
@@ -38,7 +38,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="email" placeholder="bluebill1049@hotmail.com">
+          <label htmlFor="email" placeholder="bluebill1049@hotmail.com" id = 'email'>
             Email*
           </label>
           <input name="email" ref={register({ required: true })} />
@@ -47,7 +47,7 @@ const ContactForm = () => {
           )}
         </div>
         <div>
-          <label htmlFor="message">Message</label>
+          <label htmlFor="message" id = 'message'>Message</label>
           <textarea name="message" ref={register({ required: false })} />
         </div>
         {data && (
